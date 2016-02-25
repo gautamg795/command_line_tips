@@ -4,10 +4,10 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js – The HTML Presentation Framework</title>
+		<title>Become a Command Line Ninja</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<meta name="description" content="Tips/tricks/utilities to make working on the command line a less painful experience.">
+		<meta name="author" content="Gautam Gupta">
 
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -15,7 +15,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
 
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -28,6 +28,12 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+		<style type="text/css">
+            mark {
+                background-color: inherit;
+                color: #E91E63;
+            }
+        </style>
 
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
@@ -41,330 +47,363 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Reveal.js</h1>
-					<h3>The HTML Presentation Framework</h3>
-					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
-					</p>
+					<h1>Daily Bruin SSW</h1>
+					<h3>Become a Command-Line Ninja</h3>
 				</section>
 
 				<section>
-					<h2>Hello There</h2>
-					<p>
-						reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
-					</p>
+					<h2>Agenda</h2>
+					<ol>
+                        <li class="fragment">
+                            Demo some cool stuff
+                        </li>
+                        <li class="fragment">
+                            Installing prerequisites
+                            <ul>
+                                <li>
+                                    Homebrew
+                                </li>
+                                <li>
+                                    Zsh + oh-my-zsh
+                                </li>
+                                <li>
+                                    Autojump
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="fragment">
+                            Set up optimal configuration
+                        </li>
+                        <li class="fragment">
+                            Do some cool stuff
+                        </li>
+					</ol>
 				</section>
 
 				<!-- Example of nested vertical slides -->
 				<section>
 					<section>
-						<h2>Vertical Slides</h2>
-						<p>Slides can be nested inside of each other.</p>
-						<p>Use the <em>Space</em> key to navigate through all slides.</p>
-						<br>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
+						<h3>Installing Homebrew (OSX only)</h3>
+						<p>Homebrew is a package manager for OSX (much like <code>apt-get</code> on Ubuntu.)</p>
+						<span class="fragment">
+						    <p>With homebrew, installing new packages is as simple as</p>
+						    <pre><code data-trim class="bash">
+$ brew install vim # install a good text editor
+$ brew install emacs # install a good operating system</code></pre>
+						</span>
+						<p class="fragment">Follow the simple directions at <a href="http://brew.sh">http://brew.sh</a> to install it.</p>
+					</section>
+				</section>
+				<section>
+                    <section>
+                        <h2><code>zsh</code></h2> (zee-shell)
+                        <p><code>zsh</code> is a replacement for <code>bash</code>, the terminal shell used by default on most operating systems
+                        (and the one you probably use on your Mac)</p>
+                        <p>It has a ton of nifty features to make your life way easier<br>(and you can make it look nice)</p>
+                    </section>
+                    <section>
+                        <h2>Installing <code>zsh</code> (cont.)</h2>
+                        <p>OSX already comes with a pretty new version of <code>zsh</code><br>
+                        It's good enough for now, though you're welcome to install the newest version of zsh from Homebrew later, as shown below</p>
+                        <pre><code class="bash">$ brew install zsh</code></pre>
+                        <small>(Or if not on OSX, use <code>apt-get</code> or whatever package manager you prefer)</small>
+                        <p>I recommend sticking with the OSX version of <code>zsh</code> for now--the new one has a few incompatibilities.</p>
+                    </section>
+				</section>
+
+				<section>
+                    <section>
+                        <h2>oh-my-zsh</h2>
+                        <p>
+                        oh-my-zsh is a configuration framework for <code>zsh</code> that bundles a bunch of useful plugins, themes, and aliases.
+                        </p>
+                        <p class="fragment">
+                        Or, as the author describes it:
+                        </p>
+                        <blockquote class="fragment">
+                            Oh My Zsh is a way of life! Once installed, your
+                            terminal prompt will become the talk of the town or
+                            your money back! Each time you interact with your
+                            command prompt, you'll be able to take advantage of the
+                            hundreds of bundled plugins and pretty themes.
+                            Strangers will come up to you in cafés and ask you,
+                            "that is amazing. are you some sort of genius?"
+                            Finally, you'll begin to get the sort of attention that
+                            you always felt that you deserved. ...or maybe you'll
+                            just use the time that you saved to start flossing more
+                            often.
+                        </blockquote>
+                    </section>
+                    <section>
+                        <h2>oh-my-zsh Installation</h2>
+                        <p>
+                        To install oh-my-zsh, go to <a href="http://ohmyz.sh/">ohmyz.sh</a>
+                        and run the single-line install script, which should guide you through the installation process.
+                        </p>
+                        <small class="fragment">Or, run the following: </small>
+                        <pre class="fragment"><code class="bash">sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"</code></pre>
+                        <p class="fragment"><code>zsh</code> will automatically be set as your default shell.</p>
+                    </section>
+				</section>
+
+				<section>
+                    <section>
+                        <h2>Autojump</h2>
+                        <p>
+                        Autojump is a faster way to navigate your filesystem. It
+                        works by maintaining a database of the directories you use
+                        the most from the command line.
+                        </p>
+                        <img data-src='img/autojump.png' alt='autojump demo'/>
+                    </section>
+                    <section>
+                        <h2>Autojump Installation</h2>
+                        <p>We can use homebrew here: </p>
+                        <pre><code class="bash">$ brew install autojump</code></pre>
+                        <p>No more dealing with <code>./configure</code> or Makefiles!</p>
+                    </section>
+				</section>
+
+				<section>
+                    <section>
+                        <h2>Configuration</h2>
+                        <small>(We're almost to the cool part!)</small>
+                        <p>
+                        <code>zsh</code> stores its configuration in <mark><code>~/.zshrc</code></mark>
+                        </p>
+                        <p>
+                        Open this file with a text editor, and we'll make a few changes.
+                        </p>
+                    </section>
+                    <section>
+                        <h2><code>zsh</code> Configuration</h2>
+                        <pre><code data-trim class="bash">
+# ~/.zshrc
+# I've skipped less relevant lines, and just included the ones of interest
+# * * *
+ZSH_THEME="robbyrussell" # used to set the theme. Check out http://zshthem.es for more
+export CLICOLOR=1 # make sure every program we run knows we like color
+# * * *
+# now the important part: plugins
+plugins=(brew gitfast osx sudo autojump colored-man-pages)
+# these are just my recommendations--we'll see what these do soon
+                        </code></pre>
+                    </section>
+				</section>
+				<section>
+                    <section>
+                        <h2>Playing Around With <code>zsh</code></h2>
+                        <p>I've made a small repository with a somewhat convoluted directory structure for our usage.<br>
+                        Download it here: <a href="https://github.com/gautamg795/zsh_demo">https://github.com/gautamg795/zsh_demo</a><br>
+                        It has a directory structure as follows:
+                        </p>
+                        <pre><code data-trim>
+zsh_demo
+├── data
+│   ├── africa
+│   │   ├── kenya
+│   │   │   ├── literacy.txt
+│   │   │   ├── income.txt
+│   │   │   └── population.txt
+│   │   └── ...
+│   ├── asia
+│   │   ├── ...
+│   └── europe
+│       ├── ...
+└── data
+    ├── africa
+    │   ├── kenya
+    │   │   ├── literacy_index.txt
+    │   │   ├── median_income.txt
+    │   │   └── population_by_province.txt
+    │   └── ...
+    ├── ...
+                        </code></pre>
+                        <small>Credit to reasoniamhere.com for this portion of the workshop</small>
+                    </section>
+                    <section>
+                        <h2>Globbing</h2>
+                        <p>A glob is a short expression (like a wildcard, in regex) used to select groups of files</p>
+                        <p class="fragment">Try the following examples: </p>
+                        <pre class="fragment"><code class="bash" data-trim>
+ls zsh_demo/**/*.txt # <= this is a glob
+# list every file directly below the zsh_demo folder
+ls zsh_demo
+
+# list every file in the folders directly below the zsh_demo folder
+ls zsh_demo/*
+
+# list every file in every folder two levels below the zsh_demo folder
+ls zsh_demo/*/*
+
+# list every file anywhere below the zsh_demo folder
+ls zsh_demo/**/*
+
+# list every file that ends in .txt in every folder at any level below the zsh_demo folder
+ls zsh_demo/**/*.txt
+                        </code></pre>
+                        <p class="fragment">Pressing <mark>tab</mark> expands the glob in place, so you can preview it before running the command</p>
+                    </section>
+                    <section>
+                        <h2>Advanced Globbing</h2>
+                        <p>Globbing can expand a lot more than just asterisks: </p>
+                        <pre><code class="bash" data-trim>
+# list text files that end in a number from 1 to 10
+ls -l zsh_demo/**/*<1-10>.txt
+
+# list text files that start with the letter a
+ls -l zsh_demo/**/[a]*.txt
+
+# list text files that start with either me or po
+ls -l zsh_demo/**/(me|po)*.txt
+
+# list text files that don't start with a l or p
+ls -l zsh_demo/**/[^lp]*.txt
+                        </code></pre>
+                        <p class="fragment"><code>zsh</code> supports globbing <em>far</em> more advanced than this, but
+                        this will get us pretty far. 
+				</section>
+			</section>
+
+				<section>
+					<section>
+						<h2>Magical Tab Completions</h2>
+						<p>We've all used tab completion to help fill in long filenames...<br>
+						   but <code>zsh</code> takes it to the next level.</p>
 					</section>
 					<section>
-						<h2>Basement Level 1</h2>
-						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
+						<h2>Directory/Filename Completion</h2>
+						<p>Maybe you wanted to navigate to <br>
+						<mark><code>./zsh_demo/data/asia/laos</code></mark></p>
+					    <p class="fragment">
+					    You can type an abbreviated path, then just hit <mark>tab</mark>:<br>
+					    <mark><code>$ cd z/da/as/la &lt;tab&gt;</code></mark><br>
+					    will expand to<br>
+					    <mark><code>$ cd zsh_demo/data/asia/laos</code></mark><br>
+					    </p>
+					    <p class="fragment">
+                        You can even autocomplete in the middle of a filename, so <br>
+                        <mark><code>$ cd demo &lt;tab&gt;</code></mark> will still expand to <mark><code>$ cd zsh_demo</code></mark><br>
+                        <small>(This is huge!)</small><br>
+                        <img data-src='img/path_complete.gif' alt='tab completion for paths'>
+                        </p>
 					</section>
 					<section>
-						<h2>Basement Level 2</h2>
-						<p>That's it, time to go back up.</p>
-						<br>
-						<a href="#/2">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
-
-				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slides.com" target="_blank">http://slides.com</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
-
-				<section>
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-					</p>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
+                        <h2>More Directory Completion</h2>
+                        <p><code>zsh</code> also keeps track of your directory stack--the order you changed directories.</p>
+                        <p>Following your <mark><code>cd</code></mark> command with a dash, then pressing <mark>tab</mark> will
+                        allow you to go back to previous directories, in order: </p>
+                        <img data-src='img/cd_history.gif' alt='cd history'>
 					</section>
 					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
+					    <h2>Command Flag Completion</h2>
+					    <p>Do you remember the flags for <code>tar</code>? <code>grep</code>?<br>
+					       Me neither. And who wants to look at the man page every time?
+					    </p>
+					    <p class="fragment"><code>zsh</code> has you covered! Type the command and a '-' to start the flag, then press <mark>tab</mark>:<br>
+                        <span class="fragment">
+                            <img data-src='img/tar_completion.gif' alt='tar completion'>
+                            <img data-src='img/git_completion.gif' alt='git completion'>
+                        </span>
+					    </p>
 					</section>
 				</section>
 
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-					</p>
+				<section>
+                    <section>
+                        <h2>oh-my-zsh Plugins</h2>
+                        <p>
+                        oh-my-zsh has a massive repository of plugins <br>
+                        (listed on the <a href="https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins">GitHub repo</a>)<br>
+                        Earlier, when editing the <code>.zshrc</code> file, we enabled a few:
+                        </p>
+                    </section>
+                    <section>
+                        <h2><code>brew</code></h2>
+                        <p>Adds autocompletion to Homebrew's command line utility. Nothing too fancy.</p>
+                        <img data-src='img/brew_completion.png' alt='brew completion'>
+                    </section>
+                    <section>
+                        <h2><code>colored-man-pages</code></h2>
+                        <p>Adds some color to your <code>man</code> pages--it just looks nice</p>
+                        <img data-src='img/man_color.png' alt='man color'>
+                    </section>
+                    <section>
+                        <h2><code>sudo</code></h2>
+                        <p>If you forgot to add <code>sudo</code> to your previous command, <br>
+                           press the <mark>Esc</mark> key twice to bring back the previous command, with <br>
+                           <code>sudo</code> prepended.</p>
+                        <img data-src='img/sudo.gif' alt='double esc to sudo'><br>
+                        <small class="fragment">(Alternatively, type <mark><code>sudo !!</code></mark> to do the same thing)</small>
+                    </section>
+                    <section>
+                        <h2><code>osx</code></h2>
+                        <p>Integrates your terminal with OSX with the following commands</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th align="left">Command</th>
+                                    <th align="left">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td align="left"><em>tab</em></td>
+                                    <td align="left">open the current directory in a new Finder tab</td>
+                                </tr>
+                                <tr>
+                                    <td align="left">pfd</td>
+                                    <td align="left">return the path of the frontmost Finder window</td>
+                                </tr>
+                                <tr>
+                                    <td align="left"><em>pfs</em></td>
+                                    <td align="left">return the current Finder selection</td>
+                                </tr>
+                                <tr>
+                                    <td align="left"><em>cdf</em></td>
+                                    <td align="left">cd to the current Finder directory</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section>
+                        <h2><code>gitfast</code></h2>
+                        <p>Adds useful info about git repositories to your terminal (and it's fast)</p>
+                        <p>Adds completions and shortcuts for practically every git command</p>
+                        <img data-src='img/gitfast.png' alt='git plugin'>
+                    </section>
+                    <section>
+                        <h2><code>autojump</code></h2>
+                        <p>This is the cool one. Enables <code>autojump</code>, which allows for intelligent directory jumping.<br>
+                           (See next slide for more details)</p>
+                    </section>
 				</section>
 
 				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code class="hljs">&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-						</div>
-					</section>
-					<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-						<h2>... and GIFs!</h2>
-					</section>
-				</section>
-
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code class="hljs">Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-				</section>
-
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
+					<h2><code>autojump</code></h2>
+					<p>Autojump learns your most commonly used folders, and makes switching between them an easy task. Only part of the directory name is actually required to switch directories.</p>
+					<p>It may not do too much for you yet, as it still needs to learn about where you <code>cd</code> to the most.</p>
+					<p>To use it, just type <mark><code>j &lt;keyword&gt;</code></mark>, where &lt;keyword&gt; is part of the directory name you're switching to.</p>
+					<img data-src='img/more_autojump.png' alt='autojump demo'>
+					<small class="fragment">You can also run <mark><code>j -s</code></mark> to see statistics on how directories are being weighted</small>
 				</section>
 
 				<section>
-					<h2>Pretty Code</h2>
-					<pre><code class="hljs" data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
+                    <section>
+                        <h2>History</h2>
+                        <p>You've probably used the arrow keys to navigate your history.</p>
+                        <p>It works but...what if the command was typed a long time ago?<br>
+                        What if you can't remember the command, but you remember what file it ran on?</p>
+                    </section>
+                    <section>
+                        <h2>Contextual History</h2>
+                    </section>
+                    <section>
+                        <h2>History Searching</h2>
+                    </section>
 				</section>
-
 				<section>
-					<h2>Marvelous List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section>
-					<h2>Tabular Tables</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
-							</tr>
-							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							</tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							</tr>
-						</tbody>
-					</table>
-				</section>
-
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
-
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-					<iframe src="https://www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-				</section>
-
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the page background.
-					</p>
-				</section>
-
-				<section data-state="customevent">
-					<h2>State Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-					</p>
-				</section>
-
-				<section>
-					<h2>Much more</h2>
-					<ul>
-						<li>Right-to-left support</li>
-						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
-					</ul>
+				    <h2>Miscellaneous Utilities + Fun</h2>
 				</section>
 
 				<section style="text-align: left;">
