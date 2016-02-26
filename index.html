@@ -141,7 +141,7 @@ $ brew install emacs # install a good operating system</code></pre>
                         and run the single-line install script, which should guide you through the installation process.
                         </p>
                         <small class="fragment">Or, run the following: </small>
-                        <pre class="fragment"><code class="bash">sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"</code></pre>
+                        <pre class="fragment"><code class="bash">curl -L http://install.ohmyz.sh | sh</code></pre>
                         <p class="fragment"><code>zsh</code> will automatically be set as your default shell.</p>
                     </section>
 				</section>
@@ -154,7 +154,7 @@ $ brew install emacs # install a good operating system</code></pre>
                         works by maintaining a database of the directories you use
                         the most from the command line.
                         </p>
-                        <img data-src='img/autojump.png' alt='autojump demo'/>
+                        <img data-src='images/autojump.png' alt='autojump demo'/>
                     </section>
                     <section>
                         <h2>Autojump Installation</h2>
@@ -276,34 +276,34 @@ ls -l zsh_demo/**/[^lp]*.txt
 						<p>Maybe you wanted to navigate to <br>
 						<mark><code>./zsh_demo/data/asia/laos</code></mark></p>
 					    <p class="fragment">
-					    You can type an abbreviated path, then just hit <mark>tab</mark>:<br>
-					    <mark><code>$ cd z/da/as/la &lt;tab&gt;</code></mark><br>
+					    You can type an abbreviated path, then just hit <mark>tab &#8677;</mark>:<br>
+					    <mark><code>$ cd z/da/as/la &#8677;</code></mark><br>
 					    will expand to<br>
 					    <mark><code>$ cd zsh_demo/data/asia/laos</code></mark><br>
 					    </p>
 					    <p class="fragment">
                         You can even autocomplete in the middle of a filename, so <br>
-                        <mark><code>$ cd demo &lt;tab&gt;</code></mark> will still expand to <mark><code>$ cd zsh_demo</code></mark><br>
+                        <mark><code>$ cd demo &#8677;</code></mark> will still expand to <mark><code>$ cd zsh_demo</code></mark><br>
                         <small>(This is huge!)</small><br>
-                        <img data-src='img/path_complete.gif' alt='tab completion for paths'>
+                        <img data-src='images/path_complete.gif' alt='tab completion for paths'>
                         </p>
 					</section>
 					<section>
                         <h2>More Directory Completion</h2>
                         <p><code>zsh</code> also keeps track of your directory stack--the order you changed directories.</p>
-                        <p>Following your <mark><code>cd</code></mark> command with a dash, then pressing <mark>tab</mark> will
+                        <p>Following your <mark><code>cd</code></mark> command with a dash, then pressing <mark>&#8677;</mark> will
                         allow you to go back to previous directories, in order: </p>
-                        <img data-src='img/cd_history.gif' alt='cd history'>
+                        <img data-src='images/cd_history.gif' alt='cd history'>
 					</section>
 					<section>
 					    <h2>Command Flag Completion</h2>
 					    <p>Do you remember the flags for <code>tar</code>? <code>grep</code>?<br>
 					       Me neither. And who wants to look at the man page every time?
 					    </p>
-					    <p class="fragment"><code>zsh</code> has you covered! Type the command and a '-' to start the flag, then press <mark>tab</mark>:<br>
+					    <p class="fragment"><code>zsh</code> has you covered! Type the command and a '-' to start the flag, then press <mark>&#8677;</mark>:<br>
                         <span class="fragment">
-                            <img data-src='img/tar_completion.gif' alt='tar completion'>
-                            <img data-src='img/git_completion.gif' alt='git completion'>
+                            <img data-src='images/tar_completion.gif' alt='tar completion'>
+                            <img data-src='images/git_completion.gif' alt='git completion'>
                         </span>
 					    </p>
 					</section>
@@ -321,19 +321,19 @@ ls -l zsh_demo/**/[^lp]*.txt
                     <section>
                         <h2><code>brew</code></h2>
                         <p>Adds autocompletion to Homebrew's command line utility. Nothing too fancy.</p>
-                        <img data-src='img/brew_completion.png' alt='brew completion'>
+                        <img data-src='images/brew_completion.png' alt='brew completion'>
                     </section>
                     <section>
                         <h2><code>colored-man-pages</code></h2>
                         <p>Adds some color to your <code>man</code> pages--it just looks nice</p>
-                        <img data-src='img/man_color.png' alt='man color'>
+                        <img data-src='images/man_color.png' alt='man color'>
                     </section>
                     <section>
                         <h2><code>sudo</code></h2>
                         <p>If you forgot to add <code>sudo</code> to your previous command, <br>
                            press the <mark>Esc</mark> key twice to bring back the previous command, with <br>
                            <code>sudo</code> prepended.</p>
-                        <img data-src='img/sudo.gif' alt='double esc to sudo'><br>
+                        <img data-src='images/sudo.gif' alt='double esc to sudo'><br>
                         <small class="fragment">(Alternatively, type <mark><code>sudo !!</code></mark> to do the same thing)</small>
                     </section>
                     <section>
@@ -352,7 +352,7 @@ ls -l zsh_demo/**/[^lp]*.txt
                                     <td align="left">open the current directory in a new Finder tab</td>
                                 </tr>
                                 <tr>
-                                    <td align="left">pfd</td>
+                                    <td align="left"><em>pfd</em></td>
                                     <td align="left">return the path of the frontmost Finder window</td>
                                 </tr>
                                 <tr>
@@ -370,7 +370,7 @@ ls -l zsh_demo/**/[^lp]*.txt
                         <h2><code>gitfast</code></h2>
                         <p>Adds useful info about git repositories to your terminal (and it's fast)</p>
                         <p>Adds completions and shortcuts for practically every git command</p>
-                        <img data-src='img/gitfast.png' alt='git plugin'>
+                        <img data-src='images/gitfast.png' alt='git plugin'>
                     </section>
                     <section>
                         <h2><code>autojump</code></h2>
@@ -384,7 +384,7 @@ ls -l zsh_demo/**/[^lp]*.txt
 					<p>Autojump learns your most commonly used folders, and makes switching between them an easy task. Only part of the directory name is actually required to switch directories.</p>
 					<p>It may not do too much for you yet, as it still needs to learn about where you <code>cd</code> to the most.</p>
 					<p>To use it, just type <mark><code>j &lt;keyword&gt;</code></mark>, where &lt;keyword&gt; is part of the directory name you're switching to.</p>
-					<img data-src='img/more_autojump.png' alt='autojump demo'>
+					<img data-src='images/more_autojump.png' alt='autojump demo'>
 					<small class="fragment">You can also run <mark><code>j -s</code></mark> to see statistics on how directories are being weighted</small>
 				</section>
 
@@ -397,20 +397,53 @@ ls -l zsh_demo/**/[^lp]*.txt
                     </section>
                     <section>
                         <h2>Contextual History</h2>
+                        <p>Maybe you want to re-run an ssh command you ran a while back&mdash;<br>
+                           but running through your entire history will take too long.</p>
+                        <p>Instead, you can start typing <mark><code>ssh</code></mark>, then press <mark>up &#8593;</mark><br>
+                        as usual to scroll only through history starting with <mark><code>ssh</code></mark>
+                        </p>
+                        <img class="fragment" data-src='images/ssh_completion.gif' alt='contextual history completion'><br>
+                        <small class="fragment">You can also run <mark><code>!command-name &#8677;</code></mark><br>
+                            to complete the last instance of <code>command-name</code></small> 
                     </section>
                     <section>
                         <h2>History Searching</h2>
+                        <p>You can press <mark>CTRL-R</mark> to start a search through your history.<br>
+                           Start typing, then press enter to select the displayed command, or <br>
+                           continue pressing <mark>CTRL-R</mark> to search further. <br>
+                           If you accidentally skip your target, you can press <mark>CTRL-S</mark> to go back.
+                        </p>
+                        <img class="fragment" data-src='images/history_search.gif' alt='history searching'>
+                        <p class="fragment">
+                        It's hard to get in the habit of using search as opposed to always pressing <mark>&#8593;</mark>, but you'll
+                        be able to work much faster.</p>
                     </section>
 				</section>
 				<section>
 				    <h2>Miscellaneous Utilities + Fun</h2>
+				    <p>All of the following can be installed from homebrew.<br>
+				    Many of them are completely useless but fun to have.
+				    </p>
+				    <small>(They are sorted from most to least useful)</small>
+				    <ul>
+				        <li class="fragment"><code>pbcopy</code> and <code>pbpaste</code> (OSX only, preinstalled)</li>
+				        <li class="fragment"><code>zsh-syntax-highlighting</code> (Requires some configuration)</li>
+				        <li class="fragment"><code>thefuck</code></li>
+				        <li class="fragment"><code>say</code> (OSX only, preinstalled)</li>
+				        <li class="fragment"><code>nyan</code></li>
+				        <li class="fragment"><code>cowsay</code></li>
+				        <li class="fragment"><code>cmatrix</code></li>
+				        <li class="fragment"><code>lolcat</code> (Installed through ruby)</li>
+				    </ul>
+				    <aside class="notes">write / wall?</aside>
+				    
 				</section>
 
 				<section style="text-align: left;">
 					<h1>THE END</h1>
 					<p>
-						- <a href="http://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
+					- Questions?<br>
+						- More resources will be posted in the Facebook event
 					</p>
 				</section>
 
